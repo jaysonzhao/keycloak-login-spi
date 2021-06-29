@@ -1,10 +1,14 @@
 package cn.porsche.keycloak.spi.authenticator;
 
-import cn.porsche.keycloak.spi.authenticator.phone.PhoneAuthenticator;
+
+import cn.porsche.keycloak.spi.authenticator.password.PasswordAuthenticator;
 import cn.porsche.keycloak.spi.util.AuthenticationError;
 import cn.porsche.keycloak.spi.util.AuthenticationException;
 import cn.porsche.keycloak.spi.util.ExceptionUtils;
 import cn.porsche.keycloak.spi.util.LoginType;
+
+
+
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
@@ -19,7 +23,7 @@ import org.keycloak.representations.idm.OAuth2ErrorRepresentation;
 
 public abstract class BaseAuthenticator implements Authenticator {
 
-  protected static Logger logger = Logger.getLogger(PhoneAuthenticator.class);
+  protected static Logger logger = Logger.getLogger(PasswordAuthenticator.class);
 
   public static final String PROPERTY_LOGIN_TYPE = "login_type";
 

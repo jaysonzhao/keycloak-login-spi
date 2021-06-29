@@ -2,7 +2,8 @@ package cn.porsche.keycloak.spi.authenticator.password;
 
 import cn.porsche.keycloak.spi.authenticator.BaseAuthenticatorFactory;
 import cn.porsche.keycloak.spi.util.LoginType;
-import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.keycloak.provider.ProviderConfigProperty;
 
@@ -18,7 +19,7 @@ public class PasswordAuthenticatorFactory extends BaseAuthenticatorFactory {
 
   @Override
   public List<ProviderConfigProperty> getConfigProperties() {
-    List<ProviderConfigProperty> propertyList = Lists.newArrayList();
+    List<ProviderConfigProperty> propertyList = new ArrayList<ProviderConfigProperty>();
     // 登陆表单
     propertyList.add(new ProviderConfigProperty(
         PROPERTY_FORM_USERNAME, "login form key - username", "登录表单键名称[用户名]", ProviderConfigProperty.STRING_TYPE, "username"

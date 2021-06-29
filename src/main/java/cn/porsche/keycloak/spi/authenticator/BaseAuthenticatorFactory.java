@@ -1,6 +1,7 @@
 package cn.porsche.keycloak.spi.authenticator;
 
-import cn.porsche.keycloak.spi.authenticator.phone.PhoneAuthenticatorFactory;
+
+import cn.porsche.keycloak.spi.authenticator.password.PasswordAuthenticator;
 import cn.porsche.keycloak.spi.util.LoginType;
 import java.lang.reflect.InvocationTargetException;
 import org.jboss.logging.Logger;
@@ -13,7 +14,7 @@ import org.keycloak.models.KeycloakSessionFactory;
 
 public abstract class BaseAuthenticatorFactory implements AuthenticatorFactory {
 
-  protected static Logger logger = Logger.getLogger(PhoneAuthenticatorFactory.class);
+  protected static Logger logger = Logger.getLogger(PasswordAuthenticator.class);
 
   @Override
   public Authenticator create(KeycloakSession session) {
