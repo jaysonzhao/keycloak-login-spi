@@ -27,8 +27,9 @@ public class PasswordAuthenticator extends BaseAuthenticator {
       username, context.getRealm()
     );
     if (userModel != null) {
+      
       boolean isValid = context.getSession().userCredentialManager().isValid(
-        context.getRealm(), userModel, UserCredentialModel.password(password)
+        context.getRealm(), userModel, UserCredentialModel.secret(password)
       );
       if (isValid) {
         logger.info("########## do anything before return #############");
